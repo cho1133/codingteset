@@ -59,5 +59,3 @@ Tasks: Run Task → Generate Baekjoon Template
 	•	정답 여부 표시로 복습 대상 관리
 
 ---
-
-```bash
