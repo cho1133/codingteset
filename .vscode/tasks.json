@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Generate Baekjoon Template",
+        "type": "shell",
+        "command": "python",
+        "args": [
+          "generate_template.py",
+          "${input:problemNumber}",
+          "${input:problemTitle}",
+          "${input:category}"
+        ],
+        "problemMatcher": [],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "silent",
+          "focus": false,
+          "panel": "shared"
+        }
+      }
+    ],
+    "inputs": [
+      {
+        "id": "problemNumber",
+        "type": "promptString",
+        "description": "문제 번호를 입력하세요 (예: 2884)"
+      },
+      {
+        "id": "problemTitle",
+        "type": "promptString",
+        "description": "문제 제목을 입력하세요 (예: 알람 시계)"
+      },
+      {
+        "id": "category",
+        "type": "promptString",
+        "description": "단계 폴더 이름을 입력하세요 (예: 02_조건문)"
+      }
+    ]
+  }
