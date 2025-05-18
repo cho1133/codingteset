@@ -7,14 +7,18 @@
 
 
 [접근 방식]
-- 문제를 분류한다: 구현 / 그리디 / 정렬 / DP / ...
-- 핵심 로직은 무엇인가?
-- 필요한 자료구조 또는 알고리즘은?
+
+for line in sys.stdin 구문으로 EOF까지 자동 반복 처리
+또는 while 루프 + readline() + try-except로 직접 예외 처리
 
 [주의할 점]
-- 엣지 케이스: 
-- 시간 복잡도 고려: 
-- 실수하기 쉬운 조건 분기:
+
+
+EOF 도달 시 문제 발생
+sys.stdin.readline() → 빈 문자열 '' 반환
+rstrip().split() → 빈 리스트 []
+map(int, []) → unpacking 에러 (ValueError: not enough values to unpack)
+
 
 """
 
@@ -26,5 +30,21 @@ def main():
             a, b = map(int, line.strip().split())
             print(a + b)
 
+if __name__ == "__main__":
+    main()
+
+
+def main():
+    import sys
+
+    while True:
+        line = sys.stdin.readline()
+        if not line:
+            break  # EOF
+        try:
+            a, b = map(int, line.strip().split())
+            print(a + b)
+        except ValueError:
+            continue  # 빈 줄이나 잘못된 입력 무시
 if __name__ == "__main__":
     main()
