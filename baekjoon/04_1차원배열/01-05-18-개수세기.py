@@ -28,5 +28,6 @@ def main():
     v = int(sys.stdin.readline())
 
     print(numbers.count(v))
+    
 if __name__ == "__main__":
     main()
